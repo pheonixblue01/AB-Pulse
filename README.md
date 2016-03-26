@@ -1,2 +1,0 @@
-# OttoBT
-Hack GSU option
