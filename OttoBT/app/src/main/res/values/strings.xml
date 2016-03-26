@@ -1,4 +1,15 @@
 <resources>
     <string name="app_name">OttoBT</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_activity_manager">ActivityManager</string>
+    <string name="title_activity_alarm_manager">AlarmManager</string>
+    <string name="title_activity_alert_manager">AlertManager</string>
+    <string name="title_alarms_button">Alarms</string>
+    <string name="title_alerts_button">Alerts</string>
+    <string name="title_activities_button">Activities</string>
+    <string name="title_activity_edit_alarm">EditAlarm</string>
+    <string name="title_activity_edit">EditActivity</string>
+    <string name="title_activity_edit_alert">EditAlert</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="title_activity_harmon_device_settings">HarmonDeviceSettings</string>
 </resources>
