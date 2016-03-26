@@ -1,10 +1,8 @@
-package com.example.cameroni.testapp;
+package com.example.cameroni.ottobt;
 
 /**
- * Created by Cameroni on 3/25/2016.
+ * Created by Cameroni on 3/26/2016.
  */
-
-
 import java.util.Date;
 
 import com.harman.pulsesdk.DeviceModel;
