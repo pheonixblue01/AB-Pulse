@@ -53,6 +53,8 @@
             android:name=".HarmonDeviceSettings"
             android:label="@string/title_activity_harmon_device_settings"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+        
+        <receiver android:name=".NotificationReceiver"/>
     </application>
 
 </manifest>

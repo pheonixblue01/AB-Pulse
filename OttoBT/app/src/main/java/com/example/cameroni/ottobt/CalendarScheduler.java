@@ -4,63 +4,118 @@ package com.example.cameroni.ottobt;
  * Created by Cameroni on 3/26/2016.
  */
 import java.util.ArrayList;
+import java.util.GregorianCalendar;
 
+import android.bluetooth.BluetoothDevice;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 
 public class CalendarScheduler {
+    public CalendarScheduler(Otto_Notification masterNotification){
+        this.masterNotification = masterNotification;
+    }
 
     public ArrayList<CalendarDate> scheduledDates = new ArrayList<CalendarDate>();
-    private ArrayList<CalendarDate> newScheduleStore = new ArrayList<CalendarDate>();
-    public RepeatType repeatType = RepeatType.WEEKLY;
+    public RepeatType repeatType = RepeatType.NONE;
 
-    public class CalendarDate {
-        public CalendarDate(int second, int minute, int hour, int day, int week, int month, int year){
-            this.second = second;
-            this.minute = minute;
-            this.hour = hour;
-            this.day = day;
-            this.month = month;
-            this.year = year;
-        }
+    public Otto_Notification masterNotification;
 
-        public int second, minute, hour, day, week, month, year;
-    }
+
+
+
+    private ID_Manager idManager = new ID_Manager();
+
+
+
+
 
     public enum RepeatType {
         YEARLY, MONTHLY, WEEKLY, DAILY, NONE
     }
 
+
+
     public void Run(CalendarDate firedEventDate) {
-        UnsubscribeEvent(firedEventDate);
+        firedEventDate.UnsubscribeNotification();
         switch(repeatType){
             case YEARLY:
-                firedEventDate.year += 1;
-                SubscribeEvent(firedEventDate);
+                firedEventDate.set(firedEventDate.get(GregorianCalendar.YEAR) + 1,
+                        firedEventDate.get(GregorianCalendar.MONTH),
+                        firedEventDate.get(GregorianCalendar.DAY_OF_MONTH),
+                        firedEventDate.get(GregorianCalendar.HOUR_OF_DAY),
+                        firedEventDate.get(GregorianCalendar.MINUTE),
+                        firedEventDate.get(GregorianCalendar.SECOND));
+                firedEventDate.SubscribeNotification();
                 break;
             case MONTHLY:
-                firedEventDate.month += 1;
-                SubscribeEvent(firedEventDate);
+                firedEventDate.set(firedEventDate.get(GregorianCalendar.YEAR),
+                        firedEventDate.get(GregorianCalendar.MONTH) + 1,
+                        firedEventDate.get(GregorianCalendar.DAY_OF_MONTH),
+                        firedEventDate.get(GregorianCalendar.HOUR_OF_DAY),
+                        firedEventDate.get(GregorianCalendar.MINUTE),
+                        firedEventDate.get(GregorianCalendar.SECOND));
+                firedEventDate.SubscribeNotification();
                 break;
             case WEEKLY:
-                firedEventDate.week += 1;
-                SubscribeEvent(firedEventDate);
+                firedEventDate.set(firedEventDate.get(GregorianCalendar.YEAR),
+                        firedEventDate.get(GregorianCalendar.MONTH),
+                        firedEventDate.get(GregorianCalendar.DAY_OF_MONTH) + 7,
+                        firedEventDate.get(GregorianCalendar.HOUR_OF_DAY),
+                        firedEventDate.get(GregorianCalendar.MINUTE),
+                        firedEventDate.get(GregorianCalendar.SECOND));
+                firedEventDate.SubscribeNotification();
                 break;
             case DAILY:
-                firedEventDate.day += 1;
-                SubscribeEvent(firedEventDate);
+                firedEventDate.set(firedEventDate.get(GregorianCalendar.YEAR),
+                        firedEventDate.get(GregorianCalendar.MONTH),
+                        firedEventDate.get(GregorianCalendar.DAY_OF_MONTH),
+                        firedEventDate.get(GregorianCalendar.HOUR_OF_DAY) + 1,
+                        firedEventDate.get(GregorianCalendar.MINUTE),
+                        firedEventDate.get(GregorianCalendar.SECOND));
+                firedEventDate.SubscribeNotification();
                 break;
             case NONE:
                 break;
             default:
                 break;
+        }
 
+        masterNotification.RunNotification();
+    }
+
+    public void SubscribeNotifications(){
+        for(int i = 0; i < scheduledDates.size(); i++)
+            scheduledDates.get(i).SubscribeNotification();
+    }
+
+    public void UnsubscribNotifications(CalendarDate date){
+        for(int i = 0; i < scheduledDates.size(); i++)
+            scheduledDates.get(i).UnsubscribeNotification();
+    }
+
+    public void AddCalendarDate(CalendarDate date, boolean notificationOn){
+        if(!scheduledDates.contains(date)) {
+            date.SetID(idManager.GetID());
+            scheduledDates.add(date);
+            if (notificationOn)
+                date.SubscribeNotification();
         }
     }
 
-    public void SubscribeEvent(CalendarDate date){
-
+    public void RemoveCalendarDate(CalendarDate date){
+        if(scheduledDates.contains(date)) {
+            date.UnsubscribeNotification();
+            idManager.ReturnID(date.GetID());
+            date.SetID(-1);
+            scheduledDates.remove(date);
+        }
     }
 
-    public void UnsubscribeEvent(CalendarDate date){
-
+    public CalendarDate GetCalendarDate(int id){
+        if(id < scheduledDates.size() && id >= 0)
+            return scheduledDates.get(id);
+        return null;
     }
 }
