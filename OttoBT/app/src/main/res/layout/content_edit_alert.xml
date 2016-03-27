@@ -6,8 +6,6 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.cameroni.ottobt.EditAlert">
-
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -15,7 +13,6 @@
         android:layout_alignParentTop="true"
         android:background="#FFFFFF"
         android:visibility="visible">
-
         <Button
             android:text="@string/title_alarms_button"
             android:id="@+id/AlarmsButton"
@@ -25,7 +22,6 @@
             android:layout_centerVertical="true"
             android:enabled="true"
             android:visibility="visible" />
-
         <Button
             android:text="@string/title_alerts_button"
             android:id="@+id/AlertsButton"
@@ -34,7 +30,6 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:visibility="visible" />
-
         <Button
             android:text="@string/title_activities_button"
             android:id="@+id/ActivitiesButton"

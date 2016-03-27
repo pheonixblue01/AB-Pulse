@@ -12,4 +12,20 @@
     <string name="title_activity_edit_alert">EditAlert</string>
     <string name="title_activity_settings">Settings</string>
     <string name="title_activity_harmon_device_settings">HarmonDeviceSettings</string>
+    <string name="EventName">Event Name: </string>
+    <string name="EventTime">Time:  </string>
+    <string name="EventLength">Event Length: </string>
+    <string name="EventWeekdays">Weekdays: </string>
+    <string name="EventEndAlarm">Ending Alarm: </string>
+    <string name="EventAlertTone">Alert Tone: </string>
+    <string name="EventOpenApp">Open App: </string>
+    <string name="HarmanColor">Harman Color: </string>
+    <string name="HarmanPattern">Harman Pattern:</string>
+    <string name="HarmanBrightness">Harman Brightness:  </string>
+    <string name="HarmanVolume">Harman Volume: </string>
+    <string name="HarmanSpeed">Harman Speed: </string>
+    <string name="SaveButton"> </string>
+    <string name="CancelButton"> </string>
+    <string name="AppName">AB Pulse</string>
+    <string name="title_activity_swipe_gesture_management">SwipeGestureManagement</string>
 </resources>

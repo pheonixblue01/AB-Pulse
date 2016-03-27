@@ -14,42 +14,36 @@ private static final String DATABASE_NAME="OttoBT";
 private static final int DATABASE_VERSION=1;
 
 public void onCreate(SQLiteDatabase OttoBT){
-    OttoBT.execSQL(CREATE_OTTOBT_TABLE);
+    OttoBT.execSQL(CREATE_TABLE_ABPULSE);
 }
     public DatabaseHelper(Context context){
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
-    @Override
-    public void onUpgrade(SQLiteDatabase OttoBT, int oldVersion, int newVersion){
+
+
+        @Override
+        public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
         Log.v(DatabaseHelper.class.getName(),
                 "Upgrading database from version " + oldVersion + " to "
                     + newVersion + ", which will destroy all old data");
-        OttoBT.execSQL("DROP TABLE IF EXISTS OttoBT");
-        onCreate(OttoBT);
+        db.execSQL("DROP TABLE IF EXISTS OttoBT");
+        onCreate(db);
 
     }
 
-    private static final String CREATE_OTTOBT_TABLE =
-            " CREATE TABLE IF NOT EXISTS `OttoDB`.`OttoDBNotifications` ( "
-                    +" `NotificationNumber` INT NOT NULL AUTO_INCREMENT COMMENT '', "
-                    +" `NotificationName` VARCHAR(45) NULL COMMENT '', "
-                    +" `NotificationType` VARCHAR(45) NULL COMMENT '', "
-                    +" `NotificationDate` DATE NULL COMMENT '', "
-                    +" `NotificationTime` TIME(4) NULL COMMENT '', "
-                    +" `NotificationDays` INT NULL COMMENT '', "
-                    +" `NotificationRepeatSchedule` INT NULL COMMENT '', "
-                    +" `NotificationDuration` INT NULL COMMENT '', "
-                    +" `NotificationAtEndTime` TINYINT(1) NULL COMMENT '', "
-                    +" `NotificationSound` VARCHAR(45) NULL COMMENT '', "
-                    +" `NotificationAppToOpen` VARCHAR(45) NULL COMMENT '', "
-                    +" `NotificationEnabled` TINYINT(1) NULL COMMENT '', "
-                    +" `HarmonSpeakerColor` VARCHAR(45) NULL COMMENT '', "
-                    +" `HarmonSpeakerPattern` VARCHAR(45) NULL COMMENT '', "
-                    +" `HarmonSpeakerBrightness` INT NULL COMMENT '', "
-                    +" `HarmonSpeakerVolume` INT NULL COMMENT '', "
-                    +" `HarmonSpeakerSpeed` INT NULL COMMENT '', "
-                    +" PRIMARY KEY (`NotificationNumber`)  COMMENT '') ";
-
+    private static final String CREATE_TABLE_ABPULSE = "create table if not exists "
+            +"ABPulseDBNotifications (NotificationNumber integer primary key autoincrement, "
+            +"NotificationName text not null, NotificationType text not null, "
+            +"NotificationDate text null, NotificationTime text not null, "
+            +"NotificationDays integer null, NotificationRepeatSchedule integer null, "
+            +"NotificationDuration integer null, NotificationAtEndTime integer null, "
+            +"NotificationSound text null, NotificationAppToOpen text null, "
+            +"NotificationEnabled integer not null, HarmanSpeakerColor text null, "
+            +"HarmanSpeakerPattern text null, HarmanSpeakerBrightness integer null, "
+            +"HarmanSpeakerVolume integer null, HarmanSpeakerSpeed integer null) ";
+    private static final String CREATE_TABLE_DEVICEMANAGER = "create tabke if not exists"
+            +"DevicePriorityTable (DeviceIdNumber integer primary key autoincrement, "
+            +"DeviceName text not null, DeviceMacAddress text not null, PriorityNumber integer null)";
 
 
 

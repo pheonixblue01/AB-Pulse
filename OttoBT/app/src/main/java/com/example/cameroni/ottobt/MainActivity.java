@@ -1,5 +1,6 @@
 package com.example.cameroni.ottobt;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -8,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,6 +17,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Button alarmbutton = (Button) findViewById(R.id.AlarmsButton);
+        alarmbutton.setEnabled(true);
+        Button alertbutton = (Button) findViewById(R.id.AlertsButton);
+        alertbutton.setEnabled(true);
+        Button activitybutton = (Button) findViewById(R.id.ActivitiesButton);
+        activitybutton.setEnabled(true);
+        Button homepagebutton = (Button) findViewById(R.id.HomeButton);
+        homepagebutton.setEnabled(false);
+
+
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -50,4 +63,20 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    private void alarmsTabButton(){
+        Intent intent = new Intent(MainActivity.this, AlarmManager.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);      }
+    private void alertsTabButton(){
+        Intent intent = new Intent(MainActivity.this, AlertManager.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);      }
+    private void activitiesTabButton(){
+        Intent intent = new Intent(MainActivity.this, ActivityManager.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);      }
+    private void homeTabButton(){
+        Intent intent = new Intent(MainActivity.this, MainActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);      }
 }

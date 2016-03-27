@@ -21,29 +21,76 @@
             android:id="@+id/AlarmsButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toLeftOf="@+id/AlertsButton"
-            android:layout_centerVertical="true"
             android:enabled="true"
-            android:visibility="visible" />
+            android:visibility="visible"
+            android:onClick="alarmsTabButton"
+            android:layout_alignParentTop="true"
+            android:layout_toStartOf="@+id/AlertsButton" />
 
         <Button
             android:text="@string/title_alerts_button"
             android:id="@+id/AlertsButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:visibility="visible" />
+            android:visibility="visible"
+            android:onClick="alertsTabButton"
+            android:layout_alignParentTop="true"
+            android:layout_toStartOf="@+id/ActivitiesButton" />
 
         <Button
             android:text="@string/title_activities_button"
             android:id="@+id/ActivitiesButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/AlertsButton"
-            android:layout_centerVertical="true"
-            android:visibility="visible" />
+            android:visibility="visible"
+            android:onClick="activitiesTabButton"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Home List"
+            android:id="@+id/HomeButton"
+            android:onClick="homeTabButton"
+            android:layout_alignParentTop="true"
+            android:layout_toStartOf="@+id/AlarmsButton" />
     </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_below="@+id/navbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/MainTableLayout">
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contextClickable="false"
+                >
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Add Alert"
+                    android:id="@+id/AddCustomAlert"
+                    android:layout_column="0"
+                    android:clickable="false"
+                    android:onClick="AddCustomAlert" />
+            </TableRow>
+
+
+        </TableLayout>
+
+
+
+    </ScrollView>
 
 
 </RelativeLayout>

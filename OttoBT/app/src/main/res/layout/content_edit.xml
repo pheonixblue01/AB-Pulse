@@ -7,181 +7,277 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="@layout/activity_edit">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/navbar"
-        android:layout_alignParentTop="true"
-        android:background="#FFFFFF"
-        android:visibility="visible">
-
-        <Button
-            android:text="@string/title_alarms_button"
-            android:id="@+id/AlarmsButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toLeftOf="@+id/AlertsButton"
-            android:layout_centerVertical="true"
-            android:enabled="true"
-            android:visibility="visible" />
-
-        <Button
-            android:text="@string/title_alerts_button"
-            android:id="@+id/AlertsButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:visibility="visible" />
-
-        <Button
-            android:text="@string/title_activities_button"
-            android:id="@+id/ActivitiesButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/AlertsButton"
-            android:layout_centerVertical="true"
-            android:visibility="visible" />
-    </RelativeLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:id="@+id/edit_alarm"
-        android:weightSum="1">
-
-        <EditText
+        <ScrollView
+            android:id="@+id/scrollView"
+            android:fillViewport="true"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="time"
-            android:ems="10"
-            android:id="@+id/Activity_Time"
-            android:layout_weight="0.06"
-            android:text="Time - Activity"
-            android:editable="true"
-            android:enabled="true"
-            android:saveEnabled="true" />
+            android:layout_height="match_parent">
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-        <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/Frequency_edit"
-            android:spinnerMode="dropdown" />
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="@+id/EventName"
+                        android:id="@+id/ActivityNameLabel"
+                        android:layout_column="0"
+                        android:visibility="visible"/>
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="59dp"
-            android:layout_gravity="center_horizontal"
-            android:id="@+id/">
+                </TableRow>
 
-            <ToggleButton
-                android:layout_width="49dp"
-                android:layout_height="wrap_content"
-                android:text="S"
-                android:id="@+id/Monday"
-                android:checked="false" />
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp">
 
-            <ToggleButton
-                android:layout_width="44dp"
-                android:layout_height="wrap_content"
-                android:text="M"
-                android:id="@+id/Monday"
-                android:checked="false" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="@+id/EventTime"
+                        android:id="@+id/ActivityTimeLabel"
+                        android:layout_column="0"
+                        android:visibility="visible"/>
+                </TableRow>
 
-            <ToggleButton
-                android:layout_width="51dp"
-                android:layout_height="wrap_content"
-                android:text="T"
-                android:id="@+id/toggleButton5"
-                android:checked="false" />
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
 
-            <ToggleButton
-                android:layout_width="49dp"
-                android:layout_height="wrap_content"
-                android:text="W"
-                android:id="@+id/toggleButton6"
-                android:checked="false" />
+                    <TimePicker
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/timePicker"
+                        android:layout_column="0"
+                        android:timePickerMode="spinner"
+                        android:layoutMode="clipBounds"
+                        android:visibility="visible"/>
+                </TableRow>
 
-            <ToggleButton
-                android:layout_width="44dp"
-                android:layout_height="wrap_content"
-                android:text="Th"
-                android:id="@+id/toggleButton7"
-                android:checked="false" />
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp">
 
-            <ToggleButton
-                android:layout_width="46dp"
-                android:layout_height="wrap_content"
-                android:text="F"
-                android:id="@+id/toggleButton4"
-                android:checked="false" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="@+id/EventLength"
+                        android:id="@+id/ActivityEventLengthLabel"
+                        android:layout_column="0"
+                        android:visibility="visible"
+                        android:nestedScrollingEnabled="false" />
+                </TableRow>
 
-            <ToggleButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="S"
-                android:id="@+id/toggleButton8"
-                android:checked="false" />
-        </LinearLayout>
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp">
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:ems="10"
-            android:id="@+id/Duration_edit"
-            android:layout_weight="0.06"
-            android:text="Duration" />
+                    <Spinner
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:id="@+id/ActivityEventLengthSpinner"
+                       android:layout_column="0"
+                       android:minWidth="150dp"
+                       android:visibility="visible"/>
+               </TableRow>
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="@+id/EventWeekdays"
+                        android:id="@+id/ActivityDaysLabel"
+                        android:layout_column="0" />
+                </TableRow>
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="time"
-            android:ems="10"
-            android:id="@+id/Alarm_end_edit"
-            android:layout_weight="0.1"
-            android:text="Alarm End" />
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="@+id/EventEndAlarm"
+                        android:id="@+id/ActivityEventSecondAlarmLabel"
+                        android:layout_column="0"
+                        android:visibility="visible"/>
+                </TableRow>
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Harman Visual Settings"
-            android:id="@+id/Harman_settings_button"
-            android:layout_gravity="center_horizontal"
-            android:allowUndo="true"
-            android:clickable="true"
-            android:enabled="true"
-            android:longClickable="true" />
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="@+id/EventAlertTone"
+                        android:id="@+id/ActivitySoundLabel"
+                        android:layout_column="0" />
+                </TableRow>
 
-        <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/Openapp_edit_alarm"
-            android:spinnerMode="dropdown" />
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp">
 
-        <Spinner
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/music_choices"
-            android:spinnerMode="dropdown" />
+                    <Spinner
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/spinner"
+                        android:layout_column="0" />
+                </TableRow>
 
-        <Button
-            android:layout_width="416dp"
-            android:layout_height="wrap_content"
-            android:text="Save"
-            android:id="@+id/button"
-            android:layout_weight="0.06" />
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="@+id/EventOpenApp"
+                        android:id="@+id/ActivityOpenAppLabel"
+                        android:layout_column="0" />
+                </TableRow>
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="@+id/HarmanColor"
+                        android:id="@+id/ActivityHarmanColorLabel"
+                        android:layout_column="0" />
+                </TableRow>
 
-        <Button
-            android:layout_width="403dp"
-            android:layout_height="wrap_content"
-            android:text="Cancel"
-            android:id="@+id/button2"
-            android:layout_weight="0.06" />
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp">
 
-    </LinearLayout>
+                    <Spinner
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/ActivityColorSpinner"
+                        android:layout_column="0" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="@+id/HarmanPattern"
+                        android:id="@+id/ActivityHarmonPatternLabel"
+                        android:layout_column="0" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp">
+
+                    <Spinner
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/ActivityPatternSpinner"
+                        android:layout_column="0" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="@+id/HarmanBrightness"
+                        android:id="@+id/ActivityHarmonBrightness"
+                        android:layout_column="0" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp">
+
+                    <SeekBar
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/ActivityBrightnessBar"
+                        android:layout_column="0" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="@+id/HarmanVolume"
+                        android:id="@+id/ActivityHarmonVolumeLabel"
+                        android:layout_column="0" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp">
+
+                    <SeekBar
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/ActivityVolumeBar"
+                        android:layout_column="0" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="@+id/HarmanSpeed"
+                        android:id="@+id/ActivityHarmonSpeedLabel"
+                        android:layout_column="0" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp">
+
+                    <SeekBar
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/ActivitySpeedBar"
+                        android:layout_column="0" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp">
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@+id/SaveButton"
+                        android:id="@+id/ActivityEditSaveButton"
+                        android:layout_column="0" />
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@+id/CancelButton"
+                        android:id="@+id/ActivityEditCancelButton"
+                        android:layout_column="1" />
+                </TableRow>
 
 
+            </TableLayout>
+        </ScrollView>
 </RelativeLayout>
