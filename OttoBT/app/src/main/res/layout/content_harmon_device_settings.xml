@@ -44,5 +44,99 @@
             android:visibility="visible" />
     </RelativeLayout>
 
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/Harman_settings"
+        android:weightSum="1">
+
+    <SeekBar
+        android:layout_width="450dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/r_edit"
+        android:max="255"
+        android:progress="0"
+        android:indeterminate="false" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Colors_text_field"
+        android:text="Color:" />
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Volume_settings"
+        android:max="100"
+        android:indeterminate="false" />
+
+    <SeekBar
+        android:layout_width="450dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/g_edit"
+        android:progress="0"
+        android:indeterminate="false"
+        android:max="255" />
+
+
+    <SeekBar
+        android:layout_width="450dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/b_edit"
+        android:max="255"
+        android:indeterminate="false" />
+
+<!--    <android.gesture.GestureOverlayView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/gestureOverlayView"
+        android:layout_weight="0.06"></android.gesture.GestureOverlayView>
+-->
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageButton2"
+        android:layout_gravity="center_horizontal" />
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Pattern_selection"
+        android:spinnerMode="dropdown" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Brightness_label_settings"
+        android:layout_gravity="center_horizontal"
+        android:text="Brightness" />
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Brightness_settings"
+        android:max="100"
+        android:indeterminate="false" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/Volume_label_settings"
+        android:text="Volume" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/Colors_label_settings"
+            android:text="Colors" />
+    </LinearLayout>
+
 
 </RelativeLayout>
