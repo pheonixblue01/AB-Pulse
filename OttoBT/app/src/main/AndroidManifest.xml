@@ -53,6 +53,10 @@
             android:name=".HarmonDeviceSettings"
             android:label="@string/title_activity_harmon_device_settings"
             android:theme="@style/AppTheme.NoActionBar" />
-   </application>
+        <activity
+            android:name=".EmergencyAlerts"
+            android:label="@string/title_activity_emergency_alerts"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+    </application>
 
 </manifest>

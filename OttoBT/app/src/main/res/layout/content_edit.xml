@@ -9,231 +9,166 @@
     tools:context="com.example.cameroni.ottobt.EditActivity">
 
         <ScrollView
-            android:id="@+id/scrollView"
+            android:id="@+id/EditActivityScrollView"
             android:fillViewport="true"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="157dp"
+                android:layout_height="50dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/ActivityNameLabel"
+                android:text="@string/activityNameStr"
+                android:layout_column="0"
+                android:visibility="visible"
+                android:singleLine="false"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="23dp" />
+
+            <EditText
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:id="@+id/ActivityNameEdit"
+                android:layout_alignTop="@+id/ActivityNameLabel"
+                android:layout_toEndOf="@+id/ActivityNameLabel" />
 
 
-<!--            <GridLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/activityTimeStr"
+                android:id="@+id/ActivityTimeLabel"
+                android:visibility="visible"
+                android:layout_marginTop="94dp"
+                android:layout_alignTop="@+id/timePicker"
+                android:layout_alignStart="@+id/ActivityNameLabel" />
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/activityLengthStr"
+                android:id="@+id/ActivityEventLengthLabel"
+                android:visibility="visible"
+                android:layout_below="@+id/timePicker"
+                android:layout_alignStart="@+id/ActivityNameLabel" />
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:id="@+id/ActivityEventLengthSpinner"
+                android:minWidth="150dp"
+                android:visibility="visible"
+                android:layout_below="@+id/timePicker"
+                android:layout_alignStart="@+id/timePicker" />
+
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:columnCount="4"
-                android:rowCount="25">
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/activityWeekdaysStr"
+                android:id="@+id/ActivityDaysLabel"
+                android:layout_alignParentBottom="true" />
 
-                <TextView
-                    android:layout_width="157dp"
-                    android:layout_height="50dp"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="@+id/EventName"
-                    android:id="@+id/ActivityNameLabel"
-                    android:layout_column="0"
-                    android:visibility="visible" />
+            <TextView
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/activityEndAlarmStr"
+                android:id="@+id/activityEndAlarmStr"
+                android:visibility="visible"
+                android:layout_below="@+id/ActivityEventLengthLabel"
+                android:layout_alignStart="@+id/ActivityEventLengthLabel"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp" />
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/activityAlarmToneStr"
+                android:id="@+id/ActivitySoundLabel"
+                android:layout_below="@+id/activityEndAlarmStr"
+                android:layout_alignStart="@+id/activityEndAlarmStr" />
 
-                <EditText
-                    android:layout_width="104dp"
-                    android:layout_height="50dp"
-                    android:layout_gravity="right"
-                    android:id="@+id/editText2"
-                    android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true" />
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/activityOpenAppStr"
+                android:id="@+id/ActivityOpenAppLabel"
+                android:layout_below="@+id/ActivitySoundLabel"
+                android:layout_alignStart="@+id/ActivitySoundLabel"
+                android:layout_marginTop="10dp" />
 
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="@string/HarmanDeviceSettings"
+                android:id="@+id/ActivityHarmanSettings"
+                android:layout_below="@+id/ActivityAppIconButton"
+                android:layout_alignStart="@+id/ActivityOpenAppLabel"
+                android:layout_alignEnd="@+id/ActivityAppIconButton" />
 
-                <TextView
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="@+id/EventTime"
-                    android:id="@+id/ActivityTimeLabel"
-                    android:layout_column="0"
-                    android:visibility="visible"
-                    android:layout_marginTop="38dp"
-                    android:layout_alignTop="@+id/timePicker"
-                    android:layout_alignParentStart="true" />
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="@string/SaveButton"
+                android:id="@+id/ActivityEditSaveButton"
+                android:layout_alignParentBottom="true"
+                android:layout_toStartOf="@+id/ActivityNameEdit"
+                android:layout_centerHorizontal="true" />
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="@string/CancelButton"
+                android:id="@+id/ActivityEditCancelButton"
+                android:layout_below="@+id/ActivityHarmanSettings"
+                android:layout_toEndOf="@+id/ActivityHarmanSettings"
+                android:layout_centerHorizontal="true" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="50dp"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="@+id/EventLength"
-                    android:id="@+id/ActivityEventLengthLabel"
-                    android:layout_column="0"
-                    android:visibility="visible"
-                    android:nestedScrollingEnabled="false" />
+            <TimePicker
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/timePicker"
+                android:timePickerMode="spinner"
+                android:layoutMode="clipBounds"
+                android:visibility="visible"
+                android:layout_below="@+id/ActivityNameLabel"
+                android:layout_alignParentEnd="true" />
 
-                <Spinner
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/ActivityEventLengthSpinner"
-                    android:layout_column="0"
-                    android:minWidth="150dp"
-                    android:visibility="visible"
-                    android:layout_alignTop="@+id/ActivityColorSpinner"
-                    android:layout_alignStart="@+id/ActivityEditSaveButton" />
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="New Switch"
+                android:id="@+id/ActivityEndAlarmSwitch"
+                android:layout_alignTop="@+id/activityEndAlarmStr"
+                android:layout_toEndOf="@+id/activityEndAlarmStr" />
 
-                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="@+id/EventWeekdays"
-                        android:id="@+id/ActivityDaysLabel"
-                        android:layout_column="0" />
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="@string/currentAlarmSound"
+                android:id="@+id/ActivityAlarmToneButton"
+                android:layout_alignTop="@+id/ActivitySoundLabel"
+                android:layout_alignEnd="@+id/ActivityEndAlarmSwitch" />
 
-            USE A SERIES OF CHECKBOXES HERE!
+            <ImageButton
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:id="@+id/ActivityAppIconButton"
+                android:layout_alignTop="@+id/ActivityOpenAppLabel"
+                android:layout_alignStart="@+id/ActivityAlarmToneButton" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="@+id/EventEndAlarm"
-                        android:id="@+id/ActivityEventSecondAlarmLabel"
-                        android:layout_column="0"
-                        android:visibility="visible"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="@+id/EventAlertTone"
-                        android:id="@+id/ActivitySoundLabel"
-                        android:layout_column="0" />
-                    <Spinner
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/spinner"
-                        android:layout_column="0"
-                        android:layout_alignParentBottom="true"
-                        android:layout_toEndOf="@+id/ActivityEventLengthLabel" />
+        </RelativeLayout>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="@+id/EventOpenApp"
-                        android:id="@+id/ActivityOpenAppLabel"
-                        android:layout_column="0" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="@+id/HarmanColor"
-                        android:id="@+id/ActivityHarmanColorLabel"
-                        android:layout_column="0" />
-                    <Spinner
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/ActivityColorSpinner"
-                        android:layout_column="0"
-                        android:layout_alignParentBottom="true"
-                        android:layout_alignParentStart="true"
-                        android:layout_marginBottom="58dp" />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="@+id/HarmanPattern"
-                        android:id="@+id/ActivityHarmonPatternLabel"
-                        android:layout_column="0" />
-                    <Spinner
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/ActivityPatternSpinner"
-                        android:layout_column="0"
-                        android:layout_alignTop="@+id/ActivityColorSpinner"
-                        android:layout_alignParentStart="true" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="@+id/HarmanBrightness"
-                        android:id="@+id/ActivityHarmonBrightness"
-                        android:layout_column="0" />
-                    <SeekBar
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/ActivityBrightnessBar"
-                        android:layout_column="0" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="@+id/HarmanVolume"
-                        android:id="@+id/ActivityHarmonVolumeLabel"
-                        android:layout_column="0" />
-                    <SeekBar
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/ActivityVolumeBar"
-                        android:layout_column="0" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:text="@+id/HarmanSpeed"
-                        android:id="@+id/ActivityHarmonSpeedLabel"
-                        android:layout_column="0" />
-
-                    <SeekBar
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/ActivitySpeedBar"
-                        android:layout_column="0" />
-
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@+id/SaveButton"
-                        android:id="@+id/ActivityEditSaveButton"
-                        android:layout_column="0"
-                        android:layout_alignParentBottom="true"
-                        android:layout_toEndOf="@+id/ActivityEventLengthLabel" />
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@+id/CancelButton"
-                        android:id="@+id/ActivityEditCancelButton"
-                        android:layout_column="1"
-                        android:layout_marginBottom="38dp"
-                        android:layout_alignParentBottom="true" />
-
-                <TimePicker
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/timePicker"
-                    android:timePickerMode="spinner"
-                    android:layoutMode="clipBounds"
-                    android:visibility="visible"
-                    android:layout_below="@+id/ActivityNameLabel"
-                    android:layout_alignParentEnd="true" />
-
-            </GridLayout>      -->
         </ScrollView>
 
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true">
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="50dp"></TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="50dp"></TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="150dp"></TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="50dp"></TableRow>
-    </TableLayout>
 
 </RelativeLayout>

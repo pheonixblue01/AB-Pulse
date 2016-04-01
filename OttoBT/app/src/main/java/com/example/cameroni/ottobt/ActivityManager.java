@@ -15,19 +15,14 @@ public class ActivityManager extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_activity_manager);
+        initAddActivitymButton();
+        initHomeButton();
+        initAlarmsButton();
+        initAlertsButton();
+        initActivitiesButton();
 
-        Button alarmbutton = (Button) findViewById(R.id.AlarmsButton);
-        alarmbutton.setEnabled(true);
-        Button alertbutton = (Button) findViewById(R.id.AlertsButton);
-        alertbutton.setEnabled(true);
-        Button activitybutton = (Button) findViewById(R.id.ActivitiesButton);
-        activitybutton.setEnabled(false);
-        Button homepagebutton = (Button) findViewById(R.id.HomeButton);
-        homepagebutton.setEnabled(true);
-        Button AddActivityButton = (Button) findViewById(R.id.AddActivityButton);
-
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -40,26 +35,59 @@ public class ActivityManager extends AppCompatActivity {
     }
 
 
-    private void alarmsTabButton(){
-        Intent intent = new Intent(ActivityManager.this, AlarmManager.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(intent);      }
-    private void alertsTabButton(){
-        Intent intent = new Intent(ActivityManager.this, AlertManager.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(intent);      }
-    private void activitiesTabButton(){
-        Intent intent = new Intent(ActivityManager.this, ActivityManager.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(intent);      }
-    private void homeTabButton(){
-        Intent intent = new Intent(ActivityManager.this, MainActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(intent);      }
-    private void AddActivityButton(){
-        Intent intent = new Intent(ActivityManager.this, EditActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(intent);
+    private void initAlarmsButton(){
+        Button list = (Button) findViewById(R.id.AlarmsButton);
+        list.setOnClickListener(new View.OnClickListener() {
+            public void onClick (View v){
+                Intent intent = new Intent(ActivityManager.this, AlarmManager.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+            }
+        });
+        list.setEnabled(true);
     }
-
+    private void initAlertsButton(){
+        Button list = (Button) findViewById(R.id.AlertsButton);
+        list.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(ActivityManager.this, AlertManager.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+            }
+        });
+        list.setEnabled(true);
+    }
+    private void initActivitiesButton(){
+        Button list = (Button) findViewById(R.id.ActivitiesButton);
+        list.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(ActivityManager.this, ActivityManager.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+            }
+        });
+        list.setEnabled(false);
+    }
+    private void initHomeButton(){
+        Button list = (Button) findViewById(R.id.HomeButton);
+        list.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(ActivityManager.this, MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+            }
+        });
+        list.setEnabled(true);
+    }
+    private void initAddActivitymButton(){
+        Button list = (Button) findViewById(R.id.AddActivityButton);
+        list.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(ActivityManager.this, EditActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+            }
+        });
+        list.setEnabled(true);
+    }
 }

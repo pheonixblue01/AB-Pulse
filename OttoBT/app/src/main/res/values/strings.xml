@@ -12,13 +12,16 @@
     <string name="title_activity_edit_alert">EditAlert</string>
     <string name="title_activity_settings">Settings</string>
     <string name="title_activity_harmon_device_settings">HarmonDeviceSettings</string>
-    <string name="EventName">Event Name: </string>
-    <string name="EventTime">Time:  </string>
-    <string name="EventLength">Event Length: </string>
-    <string name="EventWeekdays">Weekdays: </string>
-    <string name="EventEndAlarm">Ending Alarm: </string>
-    <string name="EventAlertTone">Alert Tone: </string>
-    <string name="EventOpenApp">Open App: </string>
+    <string name="activityNameStr">Activity Name:</string>
+    <string name="activityTimeStr">Time:  </string>
+    <string name="activityLengthStr">Event Length: </string>
+    <string name="activityWeekdaysStr">Weekdays: </string>
+    <string name="activityEndAlarmStr">Ending Alarm: </string>
+    <string name="activityAlarmToneStr">Alert Tone: </string>
+    <string name="activityOpenAppStr">Open App: </string>
+    <string name="addActivityButton">Add Activity </string>
+    <string name="currentAlarmSound">Select</string>
+    <string name="HarmanDeviceSettings">Pulse 2 Settings</string>
     <string name="HarmanColor">Harman Color: </string>
     <string name="HarmanPattern">Harman Pattern:</string>
     <string name="HarmanBrightness">Harman Brightness:  </string>
@@ -28,4 +31,5 @@
     <string name="CancelButton"> </string>
     <string name="AppName">AB Pulse</string>
     <string name="title_activity_swipe_gesture_management">SwipeGestureManagement</string>
+    <string name="title_activity_emergency_alerts">EmergencyAlerts</string>
 </resources>

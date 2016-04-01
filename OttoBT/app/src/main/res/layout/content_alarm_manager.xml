@@ -59,37 +59,38 @@
 
     <ScrollView
         android:id="@+id/scrollView"
-        android:layout_below="@+id/navbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/navbar"
+        android:layout_alignParentBottom="true">
 
-        <TableLayout
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/MainTableLayout">
+            android:layout_height="match_parent">
 
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="Add Alarm"
+                android:id="@+id/AddAlarmButton"
+                android:layout_column="0"
+                android:clickable="false"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" />
 
-            <TableRow
+            <TableLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:contextClickable="false"
-                >
+                android:layout_height="470dp"
+                android:id="@+id/AlarmTableListing"
+                android:layout_below="@+id/AddAlarmButton">
 
-                <Button
+                <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Add Alarm"
-                    android:id="@+id/AddAlarmButton"
-                    android:layout_column="0"
-                    android:clickable="false"
-                    android:onClick="AddAlarmButton" />
-            </TableRow>
+                    android:layout_height="match_parent"></TableRow>
+            </TableLayout>
 
-
-        </TableLayout>
-
-
-
+        </RelativeLayout>
     </ScrollView>
 
 </RelativeLayout>

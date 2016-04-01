@@ -23,9 +23,8 @@
             android:layout_height="wrap_content"
             android:enabled="true"
             android:visibility="visible"
-            android:onClick="alarmsTabButton"
             android:layout_alignParentTop="true"
-            android:layout_toStartOf="@+id/AlertsButton" />
+            android:layout_toEndOf="@+id/HomeButton" />
 
         <Button
             android:text="@string/title_alerts_button"
@@ -33,7 +32,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="visible"
-            android:onClick="alertsTabButton"
             android:layout_alignParentTop="true"
             android:layout_toStartOf="@+id/ActivitiesButton" />
 
@@ -43,7 +41,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="visible"
-            android:onClick="activitiesTabButton"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true" />
 
@@ -52,44 +49,51 @@
             android:layout_height="wrap_content"
             android:text="Home List"
             android:id="@+id/HomeButton"
-            android:onClick="homeTabButton"
             android:layout_alignParentTop="true"
-            android:layout_toStartOf="@+id/AlarmsButton" />
+            android:layout_alignParentStart="true" />
     </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/alertSecondBar"
+        android:layout_below="@+id/navbar">
 
+        <Button
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:text="Emergency Alerts"
+            android:id="@+id/EmergencyAlertSettings"
+            android:layout_marginEnd="21dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true" />
+        <Button
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:text="Add Custom Alert"
+            android:id="@+id/AddCustomAlert"
+            android:layout_alignParentTop="true"
+            android:layout_toStartOf="@+id/EmergencyAlertSettings"
+            android:layout_marginRight="20dp" />
+
+    </RelativeLayout>
     <ScrollView
         android:id="@+id/scrollView"
-        android:layout_below="@+id/navbar"
+        android:layout_below="@+id/alertSecondBar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <TableLayout
+        android:layout_height="match_parent"
+        android:fillViewport="false">
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/MainTableLayout">
+            android:layout_height="match_parent">
 
 
-            <TableRow
+            <TableLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:contextClickable="false"
-                >
+                android:id="@+id/AlertTableView">
 
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Add Alert"
-                    android:id="@+id/AddCustomAlert"
-                    android:layout_column="0"
-                    android:clickable="false"
-                    android:onClick="AddCustomAlert" />
-            </TableRow>
-
-
-        </TableLayout>
-
-
-
+            </TableLayout>
+        </RelativeLayout>
     </ScrollView>
 
 
