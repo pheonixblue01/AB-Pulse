@@ -42,7 +42,7 @@
                 android:layout_width="100dp"
                 android:layout_height="40dp"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="@string/activityTimeStr"
+                android:text="@string/TimeStr"
                 android:id="@+id/ActivityTimeLabel"
                 android:visibility="visible"
                 android:layout_marginTop="94dp"
@@ -72,7 +72,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="@string/activityWeekdaysStr"
+                android:text="@string/WeekdaysStr"
                 android:id="@+id/ActivityDaysLabel"
                 android:layout_alignParentBottom="true" />
 
@@ -91,7 +91,7 @@
                 android:layout_width="100dp"
                 android:layout_height="40dp"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="@string/activityAlarmToneStr"
+                android:text="@string/AlarmTone"
                 android:id="@+id/ActivitySoundLabel"
                 android:layout_below="@+id/activityEndAlarmStr"
                 android:layout_alignStart="@+id/activityEndAlarmStr" />
@@ -100,7 +100,7 @@
                 android:layout_width="100dp"
                 android:layout_height="40dp"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="@string/activityOpenAppStr"
+                android:text="@string/OpenAppStr"
                 android:id="@+id/ActivityOpenAppLabel"
                 android:layout_below="@+id/ActivitySoundLabel"
                 android:layout_alignStart="@+id/ActivitySoundLabel"
@@ -130,8 +130,7 @@
                 android:text="@string/CancelButton"
                 android:id="@+id/ActivityEditCancelButton"
                 android:layout_below="@+id/ActivityHarmanSettings"
-                android:layout_toEndOf="@+id/ActivityHarmanSettings"
-                android:layout_centerHorizontal="true" />
+                android:layout_alignStart="@+id/ActivityAppIconButton" />
 
             <TimePicker
                 android:layout_width="wrap_content"

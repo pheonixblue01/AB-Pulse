@@ -20,6 +20,8 @@ public class AlertManager extends AppCompatActivity {
         initAlertsButton();
         initAlarmsButton();
         initHomeButton();
+        initCustomAlertsButton();
+        initEmergencyAlertSettings();
 
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -52,7 +54,7 @@ public class AlertManager extends AppCompatActivity {
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);    }
         });
-        list.setEnabled(true);
+        list.setEnabled(false);
     }
     private void initActivitiesButton(){
         Button list = (Button) findViewById(R.id.ActivitiesButton);
@@ -72,7 +74,28 @@ public class AlertManager extends AppCompatActivity {
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);    }
         });
-        list.setEnabled(false);
+        list.setEnabled(true);
+    }
+    private void initCustomAlertsButton(){
+        Button list = (Button) findViewById(R.id.AddCustomAlert);
+        list.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(AlertManager.this, EditAlert.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);    }
+        });
+        list.setEnabled(true);
+    }
+
+    private void initEmergencyAlertSettings(){
+        Button list = (Button) findViewById(R.id.EmergencyAlertSettings);
+        list.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(AlertManager.this, EmergencyAlerts.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);    }
+        });
+        list.setEnabled(true);
     }
 
 }

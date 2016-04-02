@@ -16,208 +16,207 @@
             android:layout_height="match_parent"
             android:layout_alignParentEnd="true">
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="157dp"
+                    android:layout_height="50dp"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:id="@+id/AlarmNameLabel"
+                    android:text="@string/AlarmNameStr"
+                    android:visibility="visible"
+                    android:singleLine="false"
+                    android:layout_marginTop="23dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignStart="@+id/AlarmTimeLabel" />
+
+                <EditText
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/AlarmNameEdit"
+                    android:layout_alignTop="@+id/AlarmNameLabel"
+                    android:layout_toEndOf="@+id/AlarmNameLabel" />
+                <TimePicker
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/timePicker"
+                    android:timePickerMode="spinner"
+                    android:layoutMode="clipBounds"
+                    android:visibility="visible"
+                    android:layout_below="@+id/AlarmNameLabel"
+                    android:layout_alignParentEnd="true" />
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/TimeStr"
+                    android:id="@+id/AlarmTimeLabel"
+                    android:visibility="visible"
+                    android:layout_above="@+id/AlarmDaysLabel"
+                    android:layout_alignStart="@+id/AlarmDaysLabel"
+                    android:layout_marginBottom="82dp" />
+
+                <TextView
+                    android:layout_width="75dp"
+                    android:layout_height="40dp"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/WeekdaysStr"
+                    android:id="@+id/AlarmDaysLabel"
+                    android:layout_alignTop="@+id/AlarmMondayCheckBox"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginLeft="9dp" />
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/AlarmTone"
+                    android:id="@+id/AlarmSoundLabel"
+                    android:layout_marginTop="15dp"
+                    android:layout_below="@+id/AlarmDaysLabel"
+                    android:layout_alignStart="@+id/AlarmOpenAppLabel" />
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="@string/OpenAppStr"
+                    android:id="@+id/AlarmOpenAppLabel"
+                    android:layout_below="@+id/AlarmSoundLabel"
+                    android:layout_alignStart="@+id/AlarmDaysLabel"
+                    android:layout_marginTop="20dp" />
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:text="@string/currentAlarmSound"
+                    android:id="@+id/AlarmToneButton"
+                    android:layout_alignTop="@+id/AlarmCurrentToneField"
+                    android:layout_toEndOf="@+id/AlarmHarmanDeviceButton" />
+
+                <ImageButton
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:id="@+id/AlarmAppIconButton"
+                    android:layout_above="@+id/AlarmHarmanDeviceButton"
+                    android:layout_toEndOf="@+id/AlarmOpenAppLabel"
+                    android:layout_marginBottom="17dp"
+                    android:layout_marginLeft="20dp" />
+
+                <Button
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:text="@string/SaveButton"
+                    android:id="@+id/AlarmEditSaveButton"
+                    android:layout_alignParentBottom="true"
+                    android:layout_toStartOf="@+id/AlarmWednesdayCheckBox" />
+                <Button
+                    android:layout_width="150dp"
+                    android:layout_height="50dp"
+                    android:text="@string/CancelButton"
+                    android:id="@+id/AlarmEditCancelButton"
+                    android:layout_alignParentBottom="true"
+                    android:layout_toEndOf="@+id/AlarmWednesdayCheckBox" />
+
+                <CheckBox
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:text="@string/MCheck"
+                    android:id="@+id/AlarmMondayCheckBox"
+                    android:layoutDirection="rtl"
+                    android:textAlignment="textEnd"
+                    android:layout_below="@+id/timePicker"
+                    android:layout_toEndOf="@+id/AlarmDaysLabel"
+                    android:layout_marginLeft="3dp"
+                    android:textSize="10sp" />
+
+                <CheckBox
+                    android:layout_width="45dp"
+                    android:layout_height="40dp"
+                    android:text="@string/TUCheck"
+                    android:id="@+id/AlarmTuesdayCheckBox"
+                    android:layoutDirection="rtl"
+                    android:textAlignment="textEnd"
+                    android:layout_below="@+id/timePicker"
+                    android:layout_toEndOf="@+id/AlarmMondayCheckBox"
+                    android:textSize="10sp" />
+
+                <CheckBox
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:text="@string/WCheck"
+                    android:id="@+id/AlarmWednesdayCheckBox"
+                    android:layoutDirection="rtl"
+                    android:textAlignment="textEnd"
+                    android:layout_below="@+id/timePicker"
+                    android:layout_toEndOf="@+id/AlarmTuesdayCheckBox"
+                    android:textSize="10sp" />
+
+                <CheckBox
+                    android:layout_width="45dp"
+                    android:layout_height="40dp"
+                    android:text="@string/THCheck"
+                    android:id="@+id/AlarmThursdayCheckBox"
+                    android:layoutDirection="rtl"
+                    android:textAlignment="textEnd"
+                    android:layout_below="@+id/timePicker"
+                    android:layout_toEndOf="@+id/AlarmWednesdayCheckBox"
+                    android:textSize="10sp" />
+
+                <CheckBox
+                    android:layout_width="37dp"
+                    android:layout_height="40dp"
+                    android:text="@string/FCheck"
+                    android:id="@+id/AlarmFridayCheckBox"
+                    android:layoutDirection="rtl"
+                    android:textAlignment="textEnd"
+                    android:layout_below="@+id/timePicker"
+                    android:layout_toEndOf="@+id/AlarmThursdayCheckBox"
+                    android:textSize="10sp" />
+
+                <CheckBox
+                    android:layout_width="45dp"
+                    android:layout_height="40dp"
+                    android:text="@string/SACheck"
+                    android:id="@+id/AlarmSaturdayCheckBox"
+                    android:layoutDirection="rtl"
+                    android:textAlignment="textEnd"
+                    android:textSize="10sp"
+                    android:layout_below="@+id/timePicker"
+                    android:layout_toEndOf="@+id/AlarmFridayCheckBox" />
+
+                <CheckBox
+                    android:layout_width="45dp"
+                    android:layout_height="40dp"
+                    android:text="@string/SUCheck"
+                    android:id="@+id/AlarmSundayCheckBox"
+                    android:layoutDirection="rtl"
+                    android:textAlignment="textEnd"
+                    android:textSize="10sp"
+                    android:layout_above="@+id/AlarmSoundLabel"
+                    android:layout_toEndOf="@+id/AlarmSaturdayCheckBox" />
+
+                <ImageView
+                    android:layout_width="180dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/AlarmHarmanDeviceButton"
+                    android:layout_above="@+id/AlarmEditSaveButton"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="10dp"
+                    android:visibility="visible" />
+
+                <EditText
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:id="@+id/AlarmCurrentToneField"
+                    android:layout_alignTop="@+id/AlarmSoundLabel"
+                    android:layout_centerHorizontal="true" />
+
+            </RelativeLayout>
         </ScrollView>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:layout_width="157dp"
-            android:layout_height="50dp"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:id="@+id/AlarmNameLabel"
-            android:text="@+id/AlarmNameStr"
-            android:visibility="visible"
-            android:singleLine="false"
-            android:layout_marginTop="23dp"
-            android:layout_alignParentTop="true"
-            android:layout_alignStart="@+id/AlarmTimeLabel" />
-
-        <EditText
-            android:layout_width="150dp"
-            android:layout_height="50dp"
-            android:id="@+id/AlarmNameEdit"
-            android:layout_alignTop="@+id/AlarmNameLabel"
-            android:layout_toEndOf="@+id/AlarmNameLabel" />
-        <TimePicker
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/timePicker"
-            android:timePickerMode="spinner"
-            android:layoutMode="clipBounds"
-            android:visibility="visible"
-            android:layout_below="@+id/AlarmNameLabel"
-            android:layout_alignParentEnd="true" />
-
-        <TextView
-            android:layout_width="100dp"
-            android:layout_height="40dp"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="@+id/AlarmEventTimeStr"
-            android:id="@+id/AlarmTimeLabel"
-            android:visibility="visible"
-            android:layout_above="@+id/AlarmDaysLabel"
-            android:layout_alignStart="@+id/AlarmDaysLabel"
-            android:layout_marginBottom="82dp" />
-
-        <TextView
-            android:layout_width="75dp"
-            android:layout_height="40dp"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="@+id/AlarmWeekdaysStr"
-            android:id="@+id/AlarmDaysLabel"
-            android:layout_alignTop="@+id/AlarmMondayCheckBox"
-            android:layout_alignParentStart="true"
-            android:layout_marginLeft="9dp" />
-
-        <TextView
-            android:layout_width="100dp"
-            android:layout_height="40dp"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="@+id/AlarmAlarmToneStr"
-            android:id="@+id/AlarmSoundLabel"
-            android:layout_marginTop="15dp"
-            android:layout_below="@+id/AlarmDaysLabel"
-            android:layout_alignStart="@+id/AlarmOpenAppLabel" />
-
-        <TextView
-            android:layout_width="100dp"
-            android:layout_height="40dp"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="@+id/AlarmOpenAppStr"
-            android:id="@+id/AlarmOpenAppLabel"
-            android:layout_below="@+id/AlarmSoundLabel"
-            android:layout_alignStart="@+id/AlarmDaysLabel"
-            android:layout_marginTop="20dp" />
-
-        <Button
-            android:layout_width="100dp"
-            android:layout_height="40dp"
-            android:text="Tone"
-            android:id="@+id/AlarmToneButton"
-            android:layout_alignTop="@+id/AlarmCurrentToneField"
-            android:layout_toEndOf="@+id/AlarmHarmanDeviceButton" />
-
-        <ImageButton
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:id="@+id/AlarmAppIconButton"
-            android:layout_above="@+id/AlarmHarmanDeviceButton"
-            android:layout_toEndOf="@+id/AlarmOpenAppLabel"
-            android:layout_marginBottom="17dp"
-            android:layout_marginLeft="20dp" />
-
-        <Button
-            android:layout_width="150dp"
-            android:layout_height="50dp"
-            android:text="@+id/SaveButton"
-            android:id="@+id/AlarmEditSaveButton"
-            android:layout_alignParentBottom="true"
-            android:layout_toStartOf="@+id/AlarmWednesdayCheckBox" />
-        <Button
-            android:layout_width="150dp"
-            android:layout_height="50dp"
-            android:text="@+id/CancelButton"
-            android:id="@+id/AlarmEditCancelButton"
-            android:layout_alignParentBottom="true"
-            android:layout_toEndOf="@+id/AlarmWednesdayCheckBox" />
-
-        <CheckBox
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:text="M"
-            android:id="@+id/AlarmMondayCheckBox"
-            android:layoutDirection="rtl"
-            android:textAlignment="textEnd"
-            android:layout_below="@+id/timePicker"
-            android:layout_toEndOf="@+id/AlarmDaysLabel"
-            android:layout_marginLeft="3dp"
-            android:textSize="10dp" />
-
-        <CheckBox
-            android:layout_width="45dp"
-            android:layout_height="40dp"
-            android:text="TU"
-            android:id="@+id/AlarmTuesdayCheckBox"
-            android:layoutDirection="rtl"
-            android:textAlignment="textEnd"
-            android:layout_below="@+id/timePicker"
-            android:layout_toEndOf="@+id/AlarmMondayCheckBox"
-            android:textSize="10dp" />
-
-        <CheckBox
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:text="W"
-            android:id="@+id/AlarmWednesdayCheckBox"
-            android:layoutDirection="rtl"
-            android:textAlignment="textEnd"
-            android:layout_below="@+id/timePicker"
-            android:layout_toEndOf="@+id/AlarmTuesdayCheckBox"
-            android:textSize="10dp" />
-
-        <CheckBox
-            android:layout_width="45dp"
-            android:layout_height="40dp"
-            android:text="TH"
-            android:id="@+id/AlarmThursdayCheckBox"
-            android:layoutDirection="rtl"
-            android:textAlignment="textEnd"
-            android:layout_below="@+id/timePicker"
-            android:layout_toEndOf="@+id/AlarmWednesdayCheckBox"
-            android:textSize="10dp" />
-
-        <CheckBox
-            android:layout_width="37dp"
-            android:layout_height="40dp"
-            android:text="F"
-            android:id="@+id/AlarmFridayCheckBox"
-            android:layoutDirection="rtl"
-            android:textAlignment="textEnd"
-            android:layout_below="@+id/timePicker"
-            android:layout_toEndOf="@+id/AlarmThursdayCheckBox"
-            android:textSize="10dp" />
-
-        <CheckBox
-            android:layout_width="45dp"
-            android:layout_height="40dp"
-            android:text="SA"
-            android:id="@+id/AlarmSaturdayCheckBox"
-            android:layoutDirection="rtl"
-            android:textAlignment="textEnd"
-            android:textSize="10dp"
-            android:layout_below="@+id/timePicker"
-            android:layout_toEndOf="@+id/AlarmFridayCheckBox" />
-
-        <CheckBox
-            android:layout_width="45dp"
-            android:layout_height="40dp"
-            android:text="SU"
-            android:id="@+id/AlarmSundayCheckBox"
-            android:layoutDirection="rtl"
-            android:textAlignment="textEnd"
-            android:textSize="10dp"
-            android:layout_above="@+id/AlarmSoundLabel"
-            android:layout_toEndOf="@+id/AlarmSaturdayCheckBox" />
-
-        <ImageView
-            android:layout_width="180dp"
-            android:layout_height="40dp"
-            android:id="@+id/AlarmHarmanDeviceButton"
-            android:layout_above="@+id/AlarmEditSaveButton"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="10dp"
-            android:visibility="visible" />
-
-        <EditText
-            android:layout_width="150dp"
-            android:layout_height="40dp"
-            android:id="@+id/AlarmCurrentToneField"
-            android:layout_alignTop="@+id/AlarmSoundLabel"
-            android:layout_centerHorizontal="true" />
-
-    </RelativeLayout>
 
 
 </RelativeLayout>
